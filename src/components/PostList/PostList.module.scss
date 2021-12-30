@@ -1,0 +1,7 @@
+@import '../../styles/base/vars.scss';
+
+.wrapper {
+    @media all and (max-width: $break-large) {
+        padding: 15px 0;
+    }
+}

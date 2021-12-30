@@ -1,0 +1,24 @@
+.tags {
+    margin: 15px 0 0 -3px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+    li {
+        padding: 3px;
+
+        a {
+            padding: 5px 10px;
+            display: inline-block;
+            background: #eee;
+            color: $blue;
+            transition: all 0.3s;
+            border-radius: 4px;
+
+            &:hover {
+                background: $blue;
+                color: #fff;
+            }
+        }
+    }
+}
