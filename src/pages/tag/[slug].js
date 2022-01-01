@@ -1,5 +1,4 @@
 import styles from '../../styles/pages/HomePage.module.scss'
-import MainHead from '../../components/MainHead/MainHead'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import Footer from '../../components/Footer/Footer'
 import PostList from '../../components/PostList/PostList'
@@ -8,17 +7,13 @@ import { API_URL } from '../../config/app'
 
 export default function TagPage({ tag, posts }) {
   return (
-    <div id="wrapper">
-      <MainHead />
+    <div id="content">
+      <Sidebar simple={true} title={'Tag: ' + tag.name} />
 
-      <div id="content">
-        <Sidebar simple={true} title={'Tag: ' + tag.name} />
-
-        <main className={styles.main}>
-          <PostList posts={posts} />
-          <Footer />
-        </main>
-      </div>
+      <main className={styles.main}>
+        <PostList posts={posts} />
+        <Footer />
+      </main>
     </div>
   )
 }

@@ -1,15 +1,16 @@
+import { appWithTranslation } from 'next-i18next'
 import Store from '../store/store'
-import CookieAlert from '../components/CookieAlert/CookieAlert';
-import { appWithTranslation } from 'next-i18next';
-import { CookiesProvider } from 'react-cookie';
+import { CookiesProvider } from 'react-cookie'
+import Layout from '../components/Layout/Layout'
 import '../styles/main.scss'
 
 function MyApp({ Component, pageProps }) {
   return (
     <Store>
       <CookiesProvider>
-        <Component {...pageProps} />
-        <CookieAlert />
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
       </CookiesProvider>
     </Store>
   )

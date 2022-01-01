@@ -6,7 +6,6 @@ import Head from 'next/head'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { APP_URL, API_URL } from '../../config/app'
 import { Context } from '../../store/store'
-import MainHead from '../../components/MainHead/MainHead'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import TagList from '../../components/TagList/TagList'
 import Footer from '../../components/Footer/Footer'
@@ -25,9 +24,7 @@ export default function PostPage({ post }) {
     moment.locale(state.locale);
 
     return (
-        <div id="wrapper">
-            <MainHead />
-
+        <>
             <div id="content">
                 <Sidebar simple={true} title={post.name} />
 
@@ -98,7 +95,7 @@ export default function PostPage({ post }) {
                     <meta property="og:image" content={post.image.url} />
                 }
             </Head>
-        </div>
+        </>
     )
 }
 
