@@ -1,6 +1,7 @@
-import styles from '../styles/pages/HomePage.module.css'
+import styles from '../styles/pages/HomePage.module.scss'
 import MainHead from '../components/MainHead/MainHead'
 import Sidebar from '../components/Sidebar/Sidebar'
+import Footer from '../components/Footer/Footer'
 import PostList from '../components/PostList/PostList'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { API_URL } from '../config/api'
@@ -15,6 +16,7 @@ export default function HomePage({ posts }) {
 
         <main className={styles.main}>
           <PostList posts={posts} />
+          <Footer />
         </main>
       </div>
     </div>

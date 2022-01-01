@@ -1,3 +1,5 @@
 {
-    "posted": "Posted"
+    "posted": "Posted",
+    "read-time": "{{ time }} min to read",
+    "read-more": "Read more"
 }

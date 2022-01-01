@@ -1,3 +1,5 @@
 {
-    "posted": "Opublikowano"
+    "posted": "Opublikowano",
+    "read-time": "{{ time }} min. czytania",
+    "read-more": "Czytaj dalej"
 }

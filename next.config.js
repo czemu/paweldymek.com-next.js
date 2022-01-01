@@ -6,5 +6,9 @@ module.exports = {
   sassOptions: {
     includePaths: [path.join(__dirname, 'styles')],
   },
-  i18n
+  i18n,
+  trailingSlash: true,
+  images: {
+    domains: ['paweldymek.com'],
+  },
 }

@@ -13,7 +13,7 @@
         padding-bottom: 0;
     }
 
-    header {
+    .header {
         margin-bottom: 25px;
 
         h3 {
@@ -35,37 +35,50 @@
                 }
             }
         }
+    }
 
-        .bottom {
-            font-weight: 300;
-            line-height: 120%;
-            color: #888;
+    .topDetails {
+        font-weight: 300;
+        line-height: 120%;
+        color: #888;
 
-            span {
-                margin: 0 4px;
-                font-size: 12px;
+        span {
+            &:after {
+                width: 4px;
+                height: 4px;
+                margin: 0 12px;
+                display: inline-block;
+                vertical-align: 3px;
+                content: ' ';
+                border-radius: 2px;
+                background: #888;
             }
 
-            a {
-                color: #888;
-                
-                &:hover {
-                    color: $blue;
-                }
+            &:last-of-type {
+                margin-right: 0;
+                padding-right: 0;
 
-                i {
-                    margin-right: 5px;
-                    vertical-align: middle;
+                &:after {
+                    display: none;
                 }
+            }
+        }
+
+        a {
+            color: #888;
+            
+            &:hover {
+                color: $blue;
+            }
+
+            i {
+                margin-right: 5px;
+                vertical-align: middle;
             }
         }
     }
 
-    .tags {
-        margin-top: 25px;
-    }
-
-    .read-more {
+    .readMore {
         margin-top: 25px;
 
         a {

@@ -46,35 +46,4 @@
             }
         }
     }
-
-    footer.main {
-        margin-top: 30px;
-        padding-top: 15px;
-        border-top: 1px solid #ccc;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        color: #888;
-
-        .copyright,
-        .links {
-            font-weight: 300;
-        }
-
-        @media all and (max-width: $break-small) {
-            flex-direction: column;
-
-            .links {
-                margin-top: 10px;
-            }
-        }
-
-        a {
-            color: $blue;
-
-            &:hover {
-                text-decoration: underline;;
-            }
-        }
-    }
 }
