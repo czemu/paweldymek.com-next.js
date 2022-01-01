@@ -10,6 +10,7 @@ import 'moment/locale/pl'
 export default function PostListItem({ post }) {
     const [state, dispatch] = useContext(Context);
     const { t } = useTranslation('post');
+    const postDate = moment(post.created_at);
 
     moment.locale(state.locale);
 
@@ -24,8 +25,8 @@ export default function PostListItem({ post }) {
                 </h3>
                 <div className={styles.topDetails}>
                     <span>
-                        {t('posted')} <time dateTime={moment(post.created_at).format('YYYY-MM-DD')} title={moment(post.created_at).format('YYYY-MM-DD')}>
-                            {moment(post.created_at).fromNow()}
+                        {t('posted')} <time dateTime={postDate.format()} title={postDate.format('YYYY-MM-DD')}>
+                            {postDate.fromNow()}
                         </time>
                     </span>
                     <span>

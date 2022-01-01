@@ -20,7 +20,8 @@ export default function PostPage({ post }) {
     const { slug } = router.query;
     const [state, dispatch] = useContext(Context);
     const { t } = useTranslation('post');
-
+    const postDate = moment(post.created_at);
+    
     moment.locale(state.locale);
 
     return (
@@ -34,8 +35,8 @@ export default function PostPage({ post }) {
                     <article className={styles.article}>
                         <div className={styles.topBar}>
                             <p>
-                                {t('posted')} <time dateTime={moment(post.created_at).format('YYYY-MM-DD')} title={moment(post.created_at).format('YYYY-MM-DD')}>
-                                    {moment(post.created_at).fromNow()}
+                                {t('posted')} <time dateTime={postDate.format()} title={postDate.format('YYYY-MM-DD')}>
+                                    {postDate.fromNow()}
                                 </time>
                                 <span>&bull;</span>
                                 {t('read-time', {time: post.read_time})}
