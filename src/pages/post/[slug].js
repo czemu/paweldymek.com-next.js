@@ -20,7 +20,7 @@ export default function PostPage({ post }) {
     const [state, dispatch] = useContext(Context);
     const { t } = useTranslation('post');
     const postDate = moment(post.created_at);
-    
+
     moment.locale(state.locale);
 
     return (
@@ -36,7 +36,7 @@ export default function PostPage({ post }) {
                                     {postDate.fromNow()}
                                 </time>
                                 <span>&bull;</span>
-                                {t('read-time', {time: post.read_time})}
+                                {t('read-time', { time: post.read_time })}
                             </p>
                         </div>
 
@@ -45,7 +45,7 @@ export default function PostPage({ post }) {
                         }
 
                         {post.image !== null &&
-                           <figure className={styles.mainImage}>
+                            <figure className={styles.mainImage}>
                                 <Image
                                     width={post.image.width}
                                     height={post.image.height}
@@ -94,6 +94,53 @@ export default function PostPage({ post }) {
                 {post.image !== null &&
                     <meta property="og:image" content={post.image.url} />
                 }
+
+                <script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: `
+                        {
+                            "@context": "http://schema.org",
+                            "@type": "Article",
+                            "name": "` + post.name + `",
+                            "headline": "` + post.name + `",
+                            "datePublished": "` + postDate.format('YYYY-MM-DD') + `",
+                            "dateModified": "` + moment(post.updated_at).format('YYYY-MM-DD') + `",
+                            "author": {
+                                "@type": "Person",
+                                "name": "Paweł Dymek",
+                                "url": "` + APP_URL + `",
+                                "image": {
+                                   "@type": "ImageObject",
+                                   "url": "` + APP_URL + '/images/home.png' + `",
+                                   "caption": "Paweł Dymek"
+                                }
+                            },
+                            "publisher": {
+                                "@type": "Organization",
+                                "name": "Paweł Dymek",
+                                "url": "` + APP_URL + '/images/home.png' + `",
+                                "logo": {
+                                   "@type": "ImageObject",
+                                   "url": "` + APP_URL + '/images/home.png' + `",
+                                   "name": "Paweł Dymek"
+                                }
+                            },
+                      
+                            `+
+                                (post.image !== null
+                                    ? `"image": "` + post.image.url + `",`
+                                    : `"image": "` + APP_URL + '/images/home.png' + `",`)
+                            +`
+
+                            "mainEntityOfPage": {
+                                "@type": "WebPage",
+                                "@id": "` + APP_URL + '/' + state.locale + router.asPath + `"
+                            }
+                        }
+                        `
+                    }}
+                />
             </Head>
         </>
     )
