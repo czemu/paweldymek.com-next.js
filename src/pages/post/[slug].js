@@ -17,7 +17,6 @@ import 'moment/locale/pl'
 
 export default function PostPage({ post }) {
     const router = useRouter();
-    const { slug } = router.query;
     const [state, dispatch] = useContext(Context);
     const { t } = useTranslation('post');
     const postDate = moment(post.created_at);
