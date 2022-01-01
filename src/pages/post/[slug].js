@@ -9,6 +9,7 @@ import { Context } from '../../store/store'
 import MainHead from '../../components/MainHead/MainHead'
 import Sidebar from '../../components/Sidebar/Sidebar'
 import TagList from '../../components/TagList/TagList'
+import Footer from '../../components/Footer/Footer'
 import styles from '../../styles/pages/PostPage.module.scss'
 import Highlight from 'react-highlight'
 import { DiscussionEmbed } from 'disqus-react'
@@ -83,6 +84,8 @@ export default function PostPage({ post }) {
                             }
                         />
                     </article>
+
+                    <Footer />
                 </main>
             </div>
 
