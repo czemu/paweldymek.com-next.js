@@ -2,8 +2,9 @@ import { useContext } from 'react'
 import { useRouter } from 'next/router'
 import { useTranslation } from 'next-i18next'
 import Image from 'next/image'
+import Head from 'next/head'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { API_URL } from '../../config/api'
+import { APP_URL, API_URL } from '../../config/app'
 import { Context } from '../../store/store'
 import MainHead from '../../components/MainHead/MainHead'
 import Sidebar from '../../components/Sidebar/Sidebar'
@@ -84,6 +85,16 @@ export default function PostPage({ post }) {
                     </article>
                 </main>
             </div>
+
+            <Head>
+                <meta property="og:url" content={APP_URL + '/' + state.locale + router.asPath} key="og_url" />
+                <meta property="og:type" content="article" key="og_type" />
+                <meta property="og:title" content={post.name} key="og_title" />
+
+                {post.image !== null &&
+                    <meta property="og:image" content={post.image.url} />
+                }
+            </Head>
         </div>
     )
 }

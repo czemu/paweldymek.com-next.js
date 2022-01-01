@@ -4,7 +4,7 @@ import Sidebar from '../components/Sidebar/Sidebar'
 import Footer from '../components/Footer/Footer'
 import PostList from '../components/PostList/PostList'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
-import { API_URL } from '../config/api'
+import { API_URL } from '../config/app'
 
 export default function HomePage({ posts }) {
   return (
