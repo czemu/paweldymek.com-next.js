@@ -22,7 +22,7 @@ export default function MainHead() {
             <title>{t('title')}</title>
             
             <meta name="description" content={t('meta-description')} />
-            
+
             <meta property="og:site_name" content="Paweł Dymek" key="og_site_name" />
             <meta property="og:locale" content={router.locale} key="og_locale" />
             <meta property="og:url" content={router.basePath} key="og_url" />
@@ -33,6 +33,7 @@ export default function MainHead() {
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
             <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&amp;display=swap" rel="stylesheet" />
+            <link rel="canonical" href={APP_URL + '/' + state.locale + router.asPath} />
         </Head>
     )
 }

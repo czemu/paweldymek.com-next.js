@@ -26,7 +26,7 @@ export default function HomePage({ posts }) {
       </div>
 
       <Head>
-        <link rel="alternate" hrefLang={state.locale === 'en' ? 'pl' : 'en'} href={APP_URL + '/' + (state.locale === 'en' ? 'pl' : 'en')} />
+        <link rel="alternate" hrefLang={state.locale === 'en' ? 'pl' : 'en'} href={APP_URL + '/' + (state.locale === 'en' ? 'pl/' : 'en/')} />
       </Head>
     </div>
   )
