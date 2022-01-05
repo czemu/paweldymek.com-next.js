@@ -1,5 +1,5 @@
 {
-  "name": "paweldymek-client",
+  "name": "paweldymek.com-next.js",
   "private": true,
   "scripts": {
     "dev": "next dev",
