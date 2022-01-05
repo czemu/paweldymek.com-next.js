@@ -9,7 +9,7 @@ export default function CookieAlert() {
     function closeAlert() {
         let date = new Date();
         
-        date.setTime(date.getTime() + (1000 * 60 * 180));
+        date.setTime(date.getTime() + (1000 * 60 * 60 * 24 * 180)); // 180 days
 
         setCookie('cookie_alert', 1, { path: '/', expires: date });
     }
